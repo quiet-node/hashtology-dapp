@@ -1,5 +1,5 @@
 {
-  "name": "crypto-block-dapp",
+  "name": "crypto-block-dapp-client",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
