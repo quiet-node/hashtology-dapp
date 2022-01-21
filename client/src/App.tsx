@@ -1,12 +1,22 @@
-import { useState } from 'react';
-import './App.css';
+import {
+  NavBar,
+  Welcome,
+  Services,
+  Transactions,
+  Footer,
+  Loader,
+} from './components';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className='h-screen flex justify-center items-center'>
-      <header className='bg-gray-600 text-white text-2xl'>Crypto Box</header>
+    <div className=' min-h-screen'>
+      <div className='gradient-bg-welcome'>
+        <NavBar />
+        <Welcome />
+      </div>
+      <Services />
+      <Transactions />
+      <Footer />
     </div>
   );
 }
