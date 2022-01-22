@@ -1,7 +1,8 @@
-# crypto-box-dapp
+# hashtology-dapp
 
+This app is currently in development.
 
-
+Main functionality of the app is to transfer Ethereum tokens from one address to another address
 
 
 ### Resources:
