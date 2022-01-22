@@ -8,7 +8,13 @@ interface Props {
 }
 
 const NavbarItem = ({ title, classProps }: Props) => {
-  return <li className={`mx-4 cursor-pointer ${classProps}`}>{title}</li>;
+  return (
+    <li
+      className={`mx-4 my-8 cursor-pointer  flex flex-col justify-start items-center  ${classProps}`}
+    >
+      {title}
+    </li>
+  );
 };
 
 const NavBar = () => {
@@ -20,7 +26,7 @@ const NavBar = () => {
         <img
           src='../../images/hashtology-logo-2.png'
           alt='logo'
-          className=' w-36 cursor-pointer'
+          className=' w-[12rem] cursor-pointer'
         />
       </div>
       <ul className='text-white md:flex hidden list-none flex-row justify-between items-center flex-initial'>
@@ -42,12 +48,18 @@ const NavBar = () => {
             onClick={() => setToggleMenu(true)}
           />
         )}
+
+        {/*  mobile nav bar */}
         {toggleMenu && (
-          <ul className='z-10 fixed top-0 right-2 p-3 w-[70vw] h-screen shadow-2xl md:hidden list-none flex flex-col justify-start items-end text-gray-400'>
+          <ul className='z-10 fixed top-0 right-0 p-3 w-[62vw] h-screen shadow-2xl md:hidden list-none flex flex-col justify-start items-end rounded-md blue-glassmorphism animate-slide-in text-white'>
             <li className='text-xl w-full my-2'>
               <AiOutlineClose onClick={() => setToggleMenu(false)} />
               {NavArr.map((item, index) => (
-                <NavbarItem key={index + item} title={item} classProps={''} />
+                <NavbarItem
+                  key={index + item}
+                  title={item}
+                  classProps='my-2 text-lg border-b-[0.3px] border-indigo-300'
+                />
               ))}
             </li>
           </ul>
