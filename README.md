@@ -8,7 +8,7 @@ Main functionality of the app is to transfer Ethereum tokens from one address to
 ### Resources:
 - Vite: https://vitejs.dev/guide/
 - TailwindCSS: https://tailwindcss.com/docs/guides/vite
-
+- Gradient generator: https://csshero.org/mesher/
 
 
 
