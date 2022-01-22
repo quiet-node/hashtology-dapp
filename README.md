@@ -10,5 +10,4 @@
 
 
 
-p.s: 
-Really good logo: https://looka.com/editor/81761642
+
