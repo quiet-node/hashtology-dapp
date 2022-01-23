@@ -2,10 +2,6 @@ require('@nomiclabs/hardhat-waffle');
 
 require('dotenv').config();
 
-// const config = require('config');
-// const mumbaiUrl = config.get('mumbaiUrl');
-// const myPrivateKey = config.get('myPrivateKey');
-
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
 task('accounts', 'Prints the list of accounts', async (taskArgs, hre) => {
@@ -23,11 +19,11 @@ task('accounts', 'Prints the list of accounts', async (taskArgs, hre) => {
  * @type import('hardhat/config').HardhatUserConfig
  */
 module.exports = {
-  solidity: '0.8.4',
-  network: {
+  solidity: '0.8.0',
+  networks: {
     mumbai: {
       url: process.env.MUMBAI_URL, // put your own url
-      accounts: [process.env.PRIMARY_KEY], // put your own key
+      accounts: [process.env.PRIVATE_KEY], // put your own key
     },
   },
 };
