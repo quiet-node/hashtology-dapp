@@ -21,13 +21,17 @@ const getEthereumContract = (): ethers.Contract => {
 // TransactionProvider will be used in main.tsx
 // pretty much will wrap the whole app and redern whatever the passed in children are
 export const TransactionProvider: React.FC = ({ children }: any) => {
-  const [currentAccount, setCurrentAccount] = useState('');
-
   interface FType {
     addressTo: string;
     amount: string;
     message: string;
   }
+
+  const [currentAccount, setCurrentAccount] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [transactionCount, setTransactionCount] = useState(
+    localStorage.getItem('transactionCount') // cannot set to 0 since transactionCount will reset to 0 everytime we reset the page. Things will get stored in localStorage.
+  );
 
   // these are the info from the form from Welcome.tsx
   const [formData, setFormData] = useState<FType>({
@@ -84,31 +88,58 @@ export const TransactionProvider: React.FC = ({ children }: any) => {
   // send transactions
   const sendTransaction = async () => {
     try {
-      if (!ethereum) return alert('Please install metamask');
+      // if (!ethereum) return alert('Please install metamask');
+      if (ethereum) {
+        // get data from the form
+        const { addressTo, amount, message } = formData;
+        console.log(
+          `current account: ${currentAccount} - address: ${addressTo} - amount: ${amount} - message: ${message}`
+        );
 
-      // get data from the form
-      const { addressTo, amount, message } = formData;
+        const transactionContract: ethers.Contract = getEthereumContract(); // transactionContract instance
 
-      const transactionContract: ethers.Contract = getEthereumContract(); // transactionContract instance
+        const parsedAmount = ethers.utils.parseEther(amount);
 
-      const parsedAmount = ethers.utils.parseEther(amount);
+        // transfering tokens happens here
+        await ethereum.request({
+          method: 'eth_sendTransaction',
+          params: [
+            {
+              from: currentAccount,
+              to: addressTo,
+              gas: '0x5208', // 21000 GWEI
+              value: parsedAmount._hex, // have to parsed the amount from base 10 ETH to hex GWEI
+            },
+          ],
+        });
 
-      // send tokens function
-      await ethereum.request({
-        method: 'eth_sendTransaction',
-        params: [
-          {
-            from: currentAccount,
-            to: addressTo,
-            gas: '0x5208', // 21000 GWEI
-            value: parsedAmount._hex, // have to parsed the amount from base 10 ETH to hex GWEI
-          },
-        ],
-      });
+        // store transaction to the blockchain, get transactionHash from .addToBlockchain
+        const transactionHash = await transactionContract.addToBlockchain(
+          addressTo,
+          parsedAmount,
+          message
+        );
 
-      // store transaction to the blockchain
-      transactionContract.addToBlockchain();
+        // loading
+        setIsLoading(true);
+        console.log(`Loading - ${transactionHash.hash}`);
+
+        // wait for the transaction to be finished
+        await transactionHash.wait();
+
+        // done loading
+        setIsLoading(false);
+        console.log(`Success - ${transactionHash.hash}`);
+
+        // get transaction counts
+        const transactionCount =
+          await transactionContract.getTransactionCount();
+        setTransactionCount(transactionCount.toNumber);
+      } else {
+        console.log('No Ethereum object');
+      }
     } catch (err) {
+      console.log('here');
       console.error(err);
       throw new Error('No Ethereum object');
     }
@@ -117,6 +148,7 @@ export const TransactionProvider: React.FC = ({ children }: any) => {
   // checkWallet() every time the site loads
   useEffect(() => {
     checkWallet();
+    console.log(currentAccount);
   }, []);
 
   return (

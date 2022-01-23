@@ -4,7 +4,7 @@ pragma solidity^0.8.0;
 contract Transactions {
     uint256 transactionCount; //hold number of transactions
 
-    event Transfer(address from, address receiver, uint amount, string message, uint256 timestamp, string keyword);  // event is like a function that will emit later on
+    event Transfer(address from, address receiver, uint amount, string message, uint256 timestamp);  // event is like a function that will emit later on
     
 
     // struct = interface || type in typescript
@@ -14,18 +14,18 @@ contract Transactions {
         uint amount;
         string message;
         uint256 timestamp;
-        string keyword;
     }
 
     TransferStruct[] transactions; // array of TransferStruct
  
     // memory message is like an additional data pass to the transaction
-    function addToBlockchain(address payable receiver, uint amount, string memory message, string memory keyword) public { 
+    function addToBlockchain(address payable receiver, uint amount, string memory message) public { 
 
         transactionCount += 1; // increment count
-        transactions.push(TransferStruct(msg.sender, receiver, amount, message, block.timestamp, keyword)); // add transactions to the array
+        transactions.push(TransferStruct(msg.sender, receiver, amount, message, block.timestamp )); // add transactions to the array
 
-        emit Transfer(msg.sender, receiver, amount, message, block.timestamp, keyword);
+        // transferring tokens happen in TransactionContext @ ethereum.request({method: 'eth_sendTransaction'} ... )
+        emit Transfer(msg.sender, receiver, amount, message, block.timestamp); 
 
     }
 

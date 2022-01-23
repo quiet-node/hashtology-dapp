@@ -25,5 +25,9 @@ module.exports = {
       url: process.env.MUMBAI_URL, // put your own url
       accounts: [process.env.PRIVATE_KEY], // put your own key
     },
+    ropsten: {
+      url: 'https://eth-ropsten.alchemyapi.io/v2/2pFB5hLmjF9VKQPrrAjygNvWfGnrZE2w',
+      accounts: [process.env.PRIVATE_KEY],
+    },
   },
 };
