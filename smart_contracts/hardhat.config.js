@@ -1,8 +1,10 @@
 require('@nomiclabs/hardhat-waffle');
 
-const config = require('config');
-const mumbaiUrl = config.get('mumbaiUrl');
-const myPrivateKey = config.get('myPrivateKey');
+require('dotenv').config();
+
+// const config = require('config');
+// const mumbaiUrl = config.get('mumbaiUrl');
+// const myPrivateKey = config.get('myPrivateKey');
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -24,8 +26,8 @@ module.exports = {
   solidity: '0.8.4',
   network: {
     mumbai: {
-      url: mumbaiUrl,
-      accounts: [myPrivateKey],
+      url: process.env.MUMBAI_URL, // put your own url
+      accounts: [process.env.PRIMARY_KEY], // put your own key
     },
   },
 };

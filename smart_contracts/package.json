@@ -18,6 +18,7 @@
     "hardhat": "^2.8.3"
   },
   "dependencies": {
-    "config": "^3.3.7"
+    "config": "^3.3.7",
+    "dotenv": "^14.2.0"
   }
 }

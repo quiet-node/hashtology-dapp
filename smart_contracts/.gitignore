@@ -10,3 +10,4 @@ artifacts
 
 #Metamask
 config
+.env
