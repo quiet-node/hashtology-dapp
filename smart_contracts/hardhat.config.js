@@ -1,8 +1,8 @@
 require('@nomiclabs/hardhat-waffle');
 
 const config = require('config');
-const mumbaiUrl = confgi.get('mumbaiUrl');
-const myPrivateKey = confgi.get('myPrivateKey');
+const mumbaiUrl = config.get('mumbaiUrl');
+const myPrivateKey = config.get('myPrivateKey');
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
