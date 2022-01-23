@@ -9,4 +9,4 @@ cache
 artifacts
 
 #Metamask
-./config/secret.json
+config
