@@ -95,7 +95,6 @@ export const TransactionProvider: React.FC = ({ children }: any) => {
         console.log(
           `current account: ${currentAccount} - address: ${addressTo} - amount: ${amount} - message: ${message}`
         );
-
         const transactionContract: ethers.Contract = getEthereumContract(); // transactionContract instance
 
         const parsedAmount = ethers.utils.parseEther(amount);
@@ -134,12 +133,12 @@ export const TransactionProvider: React.FC = ({ children }: any) => {
         // get transaction counts
         const transactionCount =
           await transactionContract.getTransactionCount();
-        setTransactionCount(transactionCount.toNumber);
+        setTransactionCount(transactionCount.toNumber());
+        console.log('transactionCount: ' + transactionCount);
       } else {
         console.log('No Ethereum object');
       }
     } catch (err) {
-      console.log('here');
       console.error(err);
       throw new Error('No Ethereum object');
     }
