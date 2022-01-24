@@ -2,7 +2,7 @@
 
 This app is currently in development...
 
-Main functionality of the app is to transfer Ethereum tokens from one address to another address
+Main functionality: Transfer crypto currency from one wallet to another
 
 Techs used:
 
@@ -31,7 +31,8 @@ Techs used:
 ![image](https://user-images.githubusercontent.com/66233296/150714667-753ecb65-35be-44e3-90f2-f2886a22dedf.png)
 
 ### *** Mobile 
-![image](https://user-images.githubusercontent.com/66233296/150715002-e3240284-068c-400e-96c5-5cf7a9b1f77d.png) ![image](https://user-images.githubusercontent.com/66233296/150714732-8bb50e43-0d70-4104-b5a5-2f40f67f4439.png) ![image](https://user-images.githubusercontent.com/66233296/150714775-31b760ed-8cfd-4baa-837f-feeeecde509f.png)
+![image](https://user-images.githubusercontent.com/66233296/150715002-e3240284-068c-400e-96c5-5cf7a9b1f77d.png) ![image](https://user-images.githubusercontent.com/66233296/150715629-ee12db54-b8ea-40f2-b174-dff428d6fab5.png)
+ ![image](https://user-images.githubusercontent.com/66233296/150714732-8bb50e43-0d70-4104-b5a5-2f40f67f4439.png) ![image](https://user-images.githubusercontent.com/66233296/150714775-31b760ed-8cfd-4baa-837f-feeeecde509f.png)
 
 
 
