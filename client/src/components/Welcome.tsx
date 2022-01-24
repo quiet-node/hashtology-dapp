@@ -37,6 +37,7 @@ const Welcome = () => {
     formData,
     handleChange,
     sendTransaction,
+    isLoading,
   }: any = useContext(TransactionContext);
 
   // A CIRCLE IS CREATED. FORMDATA WITL ALL THE FIELDS ARE CREATED IN TRANSACTIONCONTEXT
@@ -132,7 +133,7 @@ const Welcome = () => {
             />
             <div className='h-[1px] w-full bg-gray-400 my-2' />
 
-            {false ? (
+            {isLoading ? (
               <Loader />
             ) : (
               <button

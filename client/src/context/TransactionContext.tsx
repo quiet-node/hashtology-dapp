@@ -158,6 +158,7 @@ export const TransactionProvider: React.FC = ({ children }: any) => {
         formData,
         setFormData,
         handleChange,
+        isLoading,
         sendTransaction,
       }}
     >
