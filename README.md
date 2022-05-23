@@ -34,10 +34,6 @@ https://user-images.githubusercontent.com/66233296/150720682-821d83c7-0ebe-4744-
 
 https://user-images.githubusercontent.com/66233296/150720699-bafa3e30-383c-4a90-93c2-5ef573c8e647.mov
 
-
-
-
-
 ### Resources/tools:
 - Vite: https://vitejs.dev/guide/
 - TailwindCSS: https://tailwindcss.com/docs/guides/vite
