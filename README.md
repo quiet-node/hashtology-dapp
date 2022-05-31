@@ -43,5 +43,3 @@ https://user-images.githubusercontent.com/66233296/150720699-bafa3e30-383c-4a90-
 - Polygon Mumbai: https://mumbai.polygonscan.com/
 - Metamask: https://metamask.io/
 - Course by [![@adrianhajdin:]](https://www.youtube.com/watch?v=Wn_Kb3MR_cU&list=PLv0LmkCfaGR0kJBmUTz4i3jJeDPrUWGsT&index=3&t=871s)
-
-
