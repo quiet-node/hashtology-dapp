@@ -10,7 +10,7 @@ interface Props {
 const NavbarItem = ({ title, classProps }: Props) => {
   return (
     <li
-      className={`mx-4 my-8 cursor-pointer  flex flex-col justify-start items-center  ${classProps}`}
+      className={`mx-4 my-8 cursor-pointer flex flex-col justify-start items-center  ${classProps}`}
     >
       {title}
     </li>
@@ -29,11 +29,13 @@ const NavBar = () => {
           className=' md:w-[12rem] w-[15rem]  cursor-pointer'
         />
       </div>
+
       <ul className='text-white md:flex hidden list-none flex-row justify-between items-center flex-initial'>
         {NavArr.map((item, index) => (
           <NavbarItem key={index + item} title={item} classProps={''} />
         ))}
       </ul>
+
       <div className='flex relative'>
         {toggleMenu ? (
           <AiOutlineClose
