@@ -17,7 +17,12 @@ interface Props {
 const commonStyles =
   'min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white';
 
-const Input = ({ placeholder, name, type, handleChange }: Props) => {
+const Input = ({
+  placeholder,
+  name,
+  type,
+  handleChange,
+}: Props): JSX.Element => {
   return (
     <input
       placeholder={placeholder}
@@ -40,8 +45,8 @@ const Welcome = () => {
     isLoading,
   }: any = useContext(TransactionContext);
 
-  // A CIRCLE IS CREATED. FORMDATA WITL ALL THE FIELDS ARE CREATED IN TRANSACTIONCONTEXT
-  // THEN USERS FILL INFORMATION IN THE FRONTEND FORM, HANDLECHANGE WILL SET THE INFO
+  // A CIRCLE IS CREATED. FORMDATA WITH ALL THE FIELDS ARE CREATED IN TRANSACTIONCONTEXT
+  // THEN USERS FILL THE INFORMATION IN THE FRONTEND FORM, HANDLECHANGE WILL SET THE INFO
   // TO THE FORM DATA IN TRANSACTIONCONTEXT. THEN FROM CONTEXT, WE USE THE DATA TO BUILD
   // THE SEND TRANSACTION FUNCTION.
 
