@@ -97,7 +97,7 @@ export const TransactionProvider: React.FC = ({ children }: any) => {
         );
         const transactionContract: ethers.Contract = getEthereumContract(); // transactionContract instance
 
-        const parsedAmount = ethers.utils.parseEther(amount);
+        const parsedAmount: ethers.BigNumber = ethers.utils.parseEther(amount);
 
         // transfering tokens happens here
         await ethereum.request({
