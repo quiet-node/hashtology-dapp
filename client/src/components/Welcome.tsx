@@ -10,6 +10,7 @@ interface Props {
   placeholder: string;
   name: string;
   type: string;
+  value: string;
   handleChange: (e: any, name: string) => void;
 }
 
@@ -20,6 +21,7 @@ const Input = ({
   placeholder,
   name,
   type,
+  value,
   handleChange,
 }: Props): JSX.Element => {
   return (
@@ -28,6 +30,7 @@ const Input = ({
       type={type}
       step='0.0001'
       onChange={(e) => handleChange(e, name)}
+      value={value}
       className='my-2 w-full rounded-md p-2 outline-none bg-transparent text-white border-none text-sm white-glassmorphism'
     />
   );
@@ -120,18 +123,21 @@ const Welcome = () => {
               placeholder='Address To '
               name='addressTo'
               type='text'
+              value={formData.addressTo}
               handleChange={handleChange}
             />
             <Input
               placeholder='Amount (ETH) '
               name='amount'
               type='number'
+              value={formData.amount}
               handleChange={handleChange}
             />
             <Input
               placeholder='Message '
               name='message'
               type='text'
+              value={formData.message}
               handleChange={handleChange}
             />
             <div className='h-[1px] w-full bg-gray-400 my-2' />

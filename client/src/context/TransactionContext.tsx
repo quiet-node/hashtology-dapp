@@ -130,6 +130,12 @@ export const TransactionProvider: React.FC = ({ children }: any) => {
         setIsLoading(false);
         console.log(`Success - ${transactionHash.hash}`);
 
+        setFormData({
+          addressTo: '',
+          amount: '',
+          message: '',
+        });
+
         // get transaction counts
         const transactionCount =
           await transactionContract.getTransactionCount();
