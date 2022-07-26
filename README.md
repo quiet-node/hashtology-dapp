@@ -4,7 +4,7 @@ This app is currently in development...
 
 Main functionality: Transfer crypto currency from one wallet to another
 
-Techs used:
+Technologies:
 
   - TypeScript
 
