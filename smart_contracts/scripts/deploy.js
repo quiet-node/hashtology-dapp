@@ -2,6 +2,7 @@ import { ethers } from 'hardhat';
 
 const main = async () => {
   // Get the contract to deploy
+  const Transactions = await ethers.getContractFactory('Transactions');
   const transactions = await Transactions.deploy();
 
   await transactions.deployed();
@@ -9,14 +10,7 @@ const main = async () => {
   console.log('Transactions deployed to:', transactions.address);
 };
 
-const deploy = async () => {
-  try {
-    await main();
-    process.exit(0);
-  } catch (err) {
-    console.error(err);
-    process.exit(1);
-  }
-};
-
-deploy();
+main().catch((e) => {
+  console.error(e);
+  process.exitCode = 1;
+});
