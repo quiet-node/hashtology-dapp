@@ -6,23 +6,23 @@ Main functionality: Transfer crypto currency from one wallet to another
 
 Techs used:
 
-  > TypeScript
+  - TypeScript
 
-  > ReactJS | Vite 
+  - ReactJS | Vite 
 
-  > TailwindCSS
+  - TailwindCSS
 
-  > Ethereum
+  - Ethereum
  
-  > Polygon | Mumbai 
+  - Polygon | Mumbai 
 
-  > Hardhat
+  - Hardhat
 
-  > EthersJs
+  - EthersJs
   
-  >  Alchamy 
+  - Alchamy 
 
-  >  Metamask
+  - Metamask
 
 
 ## Demo Preview
