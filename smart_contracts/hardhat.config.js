@@ -1,4 +1,4 @@
-require('@nomiclabs/hardhat-waffle');
+import '@nomiclabs/hardhat-waffle';
 
 require('dotenv').config();
 
@@ -18,16 +18,14 @@ task('accounts', 'Prints the list of accounts', async (taskArgs, hre) => {
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
-module.exports = {
-  solidity: '0.8.0',
-  networks: {
-    mumbai: {
-      url: process.env.MUMBAI_URL, // put your own url
-      accounts: [process.env.PRIVATE_KEY], // put your own key
-    },
-    ropsten: {
-      url: process.env.ROPSTEN_URL,
-      accounts: [process.env.PRIVATE_KEY],
-    },
+export const solidity = '0.8.9';
+export const networks = {
+  mumbai: {
+    url: process.env.MUMBAI_URL,
+    accounts: [process.env.PRIVATE_KEY], // put your own key
+  },
+  ropsten: {
+    url: process.env.ROPSTEN_URL,
+    accounts: [process.env.PRIVATE_KEY],
   },
 };
