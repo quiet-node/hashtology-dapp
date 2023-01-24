@@ -1,8 +1,6 @@
 # hashtology-dapp
 
-This app is currently in development...
-
-Main functionality: Transfer crypto currency from one wallet to another
+A user-friendly crypto-wallet that makes it easy to send and receive different types of digital currency across the globe, providing a secure and reliable way to manage your digital assets.
 
 Technologies:
 
