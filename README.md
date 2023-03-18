@@ -18,7 +18,7 @@ Technologies:
 
   - EthersJs
   
-  - Alchamy 
+  - Alchemy 
 
   - Metamask
 
